@@ -1,0 +1,8 @@
+{
+  "scary_sound": {
+    "subtitle": "sound.donation_mod.scary_sound",
+    "sounds": [
+      "donation_mod:scary_sound"
+    ]
+  }
+}

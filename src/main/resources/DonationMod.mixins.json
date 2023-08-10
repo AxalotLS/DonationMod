@@ -1,0 +1,21 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.axalotl.donationmod.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "PlayerEntityMixin",
+    "EntityRendererMixin",
+    "CameraAccessor",
+    "GameRendererMixin",
+    "KeyboardInputMixin",
+    "StatusEffectUtilMixin",
+    "ElytraItemMixin",
+    "PerspectiveMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
