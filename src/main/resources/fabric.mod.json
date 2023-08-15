@@ -3,18 +3,23 @@
   "id": "donation_mod",
   "version": "${version}",
   "name": "DonationMod",
-  "description": "Donation events in minecraft",
+  "description": "Donation events in Minecraft",
   "authors": [
     "_Axa_lotL_"
   ],
-  "contact": {},
+  "contact": {
+    "homepage": "https://github.com/AxalotLS/DonationMod",
+    "sources": "https://github.com/AxalotLS/DonationMod",
+    "issues": "https://github.com/AxalotLS/DonationMod/issues"
+  },
   "license": "MIT",
   "icon": "assets/donation_mod/donationmod.png",
   "environment": "client",
   "entrypoints": {
     "main": [
       "com.axalotl.donationmod.DonationMod"
-    ]
+    ],
+    "modmenu": [ "com.axalotl.donationmod.config.ModMenuApiImpl" ]
   },
   "mixins": [
     "DonationMod.mixins.json"

@@ -54,7 +54,7 @@ public class DonationEvent {
         return null;
     }
     public static void launchRandomEvent(DonationAlertsEvent donationAlertsEvent) {
-        int amount = (int) donationAlertsEvent.Amount;
+        int amount = (int) donationAlertsEvent.AmountMain;
         int VeryBigDonations = amount / config.getVeryBigDonationAmount();
         int remains = amount % config.getVeryBigDonationAmount();
         int BigDonations = remains / config.getBigDonationAmount();
@@ -134,15 +134,16 @@ public class DonationEvent {
             int count = 0;
             @Override
             public void run() {
-                assert client.player != null;
-                if (effectName != null && eventName == null) {
-                    player.sendMessage(Text.of(I18n.translate("text.donation_mod.message.donation_effect") + " " + effectName), true);
-                } else if (effectName == null && eventName != null) {
-                    player.sendMessage(Text.literal(I18n.translate("text.donation_mod.message.donation_event") + " " + eventName), true);
-                }
-                count++;
-                if (count == 3) {
-                    this.cancel();
+                if(client.player != null){
+                    if (effectName != null && eventName == null) {
+                        Objects.requireNonNull(player).sendMessage(Text.of(I18n.translate("text.donation_mod.message.donation_effect") + " " + effectName), true);
+                    } else if (effectName == null && eventName != null) {
+                        Objects.requireNonNull(player).sendMessage(Text.literal(I18n.translate("text.donation_mod.message.donation_event") + " " + eventName), true);
+                    }
+                    count++;
+                    if (count == 3) {
+                        this.cancel();
+                    }
                 }
             }
         }, 100, 900);
